@@ -16,6 +16,7 @@
 #flex-section2 ul {
 	display: flex;
     justify-content: space-between;
+	margin:0;
     padding: 0;
     list-style-type: none;
 
@@ -24,6 +25,7 @@
 #flex-section2 li {
 	font-weight: 500; 
     border-radius: 8px;
+	box-sizing:border-box;
 }
 
 #flex-section2 .item1 {
@@ -49,6 +51,7 @@
 /* Flexbox Part 3 */
 
 #flex-section3 .box {
+	
 	display: flex;
     justify-content: center;
     align-items: center;
@@ -145,18 +148,23 @@
 	color: #000;
 	padding: 20px;
 	text-decoration: none;
-	transition: background-color 3s, color 3s;
-	
+
 
 }
 
 #transition-section .box a:hover {
 	background-color: #cc0000;
 	color: #fff;
-	transition: background-color 0.5s, color 0.5s; 
-
 
 }
+#transition-section .box a {
+	transition: background-color 3s, color 3s;
+}
+	  
+#transition-section .box a:hover {
+    transition: background-color 0.5s, color 0.5s;
+}
+	  
 
 
 /* end Transition Part */
