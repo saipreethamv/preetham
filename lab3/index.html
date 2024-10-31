@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITMD 441 - Lab 3 - Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tip Calculator</h1>
+        </header>
+        <main>
+            <form id="tipCalculator">
+                <div class="form-group">
+                    <label for="billTotal">Bill Total:</label>
+                    <input type="text" id="billTotal" name="billTotal" placeholder="Enter bill amount" required style="font-weight: bolder;">
+                    <span id="errorMessage" class="error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="currency">Select Currency:</label>
+                    <select id="currency" name="currency">
+                        <option value="USD">USD ($)</option>
+                        <option value="EUR">EUR (€)</option>
+                        <option value="GBP">GBP (£)</option>
+                        <option value="JPY">JPY (¥)</option>
+                        <option value="INR">INR (₹)</option>
+                    </select>
+                </div>
+
+                <div class="form-group tip-input-group">
+                    <label for="tipSlider">Tip:</label>
+                    <input type="range" id="tipSlider" name="tipSlider" min="0" max="100" >
+                    <input type="number" id="tipInput" name="tipInput" min="0" max="100"  class="tip-number-input">
+                    <span class="tip-percent">%</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipPercentage">Tip Percentage:</label>
+                    <input type="text" id="tipPercentage" name="tipPercentage" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipAmount">Tip Amount:</label>
+                    <input type="text" id="tipAmount" name="tipAmount" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="totalWithTip">Total Bill with Tip:</label>
+                    <input type="text" id="totalWithTip" name="totalWithTip" disabled>
+                </div>
+
+                <div class="currency-rates">
+                    <h3>Current Exchange Rates (1 USD)</h3>
+                    <ul>
+                        <li>JPY: ¥149.34</li>
+                        <li>INR: ₹84.07</li>
+                    </ul>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
