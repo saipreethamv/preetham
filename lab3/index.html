@@ -31,10 +31,10 @@
                 </div>
 
                 <div class="form-group tip-input-group">
-                    <label for="tipSlider">Tip:</label>
-                    <input type="range" id="tipSlider" name="tipSlider" min="0" max="100" value="0">
-                    <input type="number" id="tipInput" name="tipInput" min="0" max="100" value="0" class="tip-number-input">
-                    <span class="tip-percent">%</span>
+                    <label for="tipSlider">Tip Percentage (%):</label>
+                <div class="tip-slider-container">
+                <input type="range" id="tipSlider" min="0" max="100" value="0" onchange="document.getElementById('tipPercentageDisplay').innerText = this.value;">
+                <span id="tipPercentageDisplay">0</span>%
                 </div>
 
                 <div class="form-group">
