@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Exchange rates (1 USD to other currencies)
     const exchangeRates = {
         USD: 1,
-        EUR: 0.93,
-        GBP: 0.82,
         JPY: 149.34,
         INR: 84.07
     };
@@ -21,34 +19,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Currency symbols
     const currencySymbols = {
         USD: '$',
-        EUR: '€',
-        GBP: '£',
         JPY: '¥',
         INR: '₹'
     };
 
     // Function to validate bill amount
     function isValidBillAmount(value) {
-        return !isNaN(value) && value >= 0;
+        return !isNaN(value) || value >= 0;
     }
 
     // Function to format currency
     function formatCurrency(amount, currency) {
         const symbol = currencySymbols[currency];
         const converted = amount * exchangeRates[currency];
-        
+
         // Handle JPY differently (no decimal places)
         if (currency === 'JPY') {
-            return ${symbol}${Math.round(converted)};
+            return `${symbol}${Math.round(converted)}`;
         }
-        
-        return ${symbol}${converted.toFixed(2)};
+
+        return `${symbol}${converted.toFixed(2)}`;
     }
 
     // Function to calculate tip
     function calculateTip() {
         const billAmount = parseFloat(billTotalInput.value);
-        const tipPercentage = parseFloat(tipInput.value);
+        const tipPercentage = parseFloat(tipInput.value) || 0; // Default to 0 if NaN
         const selectedCurrency = currencySelect.value;
 
         if (!isValidBillAmount(billAmount)) {
@@ -62,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         errorMessage.textContent = '';
         
         // Update tip percentage display
-        tipPercentageInput.value = ${tipPercentage}%;
+        tipPercentageInput.value = `${tipPercentage}%`;
 
         // Calculate tip amount
         const tipAmount = billAmount * (tipPercentage / 100);
