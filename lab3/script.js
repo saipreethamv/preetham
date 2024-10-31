@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Handle JPY differently (no decimal places)
         if (currency === 'JPY') {
-            return ${symbol}${Math.round(converted)};
+            return `${symbol}${Math.round(converted)}`;
         }
         
-        return ${symbol}${converted.toFixed(2)};
+        return `${symbol}${converted.toFixed(2)}`;
     }
 
     // Function to calculate tip
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         errorMessage.textContent = '';
         
         // Update tip percentage display
-        tipPercentageInput.value = ${tipPercentage}%;
+        tipPercentageInput.value = `${tipPercentage}%`;
 
         // Calculate tip amount
         const tipAmount = billAmount * (tipPercentage / 100);
