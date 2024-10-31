@@ -39,19 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Handle JPY differently (no decimal places)
         if (currency === 'JPY') {
-            return `${symbol}${Math.round(converted)}`;
+            return ${symbol}${Math.round(converted)};
         }
         
-        return `${symbol}${converted.toFixed(2)}`;
+        return ${symbol}${converted.toFixed(2)};
     }
 
-    // Function to calculate tip and update display
+    // Function to calculate tip
     function calculateTip() {
         const billAmount = parseFloat(billTotalInput.value);
         const tipPercentage = parseFloat(tipInput.value);
         const selectedCurrency = currencySelect.value;
 
-        // Check if bill amount is valid
         if (!isValidBillAmount(billAmount)) {
             errorMessage.textContent = 'Please enter a valid positive number';
             tipPercentageInput.value = '';
@@ -60,11 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Clear error message
         errorMessage.textContent = '';
         
         // Update tip percentage display
-        tipPercentageInput.value = `${tipPercentage}%`;
+        tipPercentageInput.value = ${tipPercentage}%;
 
         // Calculate tip amount
         const tipAmount = billAmount * (tipPercentage / 100);
@@ -82,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         calculateTip();
     }
 
-    // Event listeners for user interactions
+    // Event listeners
     tipSlider.addEventListener('input', () => syncTipInputs(tipSlider.value));
     tipInput.addEventListener('input', () => {
         let value = parseFloat(tipInput.value);
