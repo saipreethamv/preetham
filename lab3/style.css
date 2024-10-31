@@ -1,4 +1,4 @@
-* Reset and base styles */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +7,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-color: #ffffff; /* Changed to white */
+    color: #000000; /* Changed text color to black for contrast */
     line-height: 1.6;
     padding: 20px;
 }
@@ -17,30 +17,28 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #292929;
+    background-color: #f0f0f0; /* Light gray for contrast with white background */
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Header */
 header {
     text-align: center;
     margin-bottom: 30px;
 }
 
 h1 {
-    color: #ffffff;
+    color: #333333; /* Darker text color */
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
+/* Labels and Input Fields */
 label {
     display: block;
     margin-bottom: 8px;
-    color: #cccccc;
+    color: #333333;
     font-size: 0.9rem;
 }
 
@@ -49,24 +47,25 @@ input[type="number"],
 select {
     width: 100%;
     padding: 12px;
-    background-color: #3d3d3d;
-    border: none;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
     border-radius: 6px;
-    color: #ffffff;
+    color: #333333;
     font-size: 1.1rem;
 }
 
+/* Disabled Input Fields */
 input:disabled {
-    background-color: #3d3d3d;
-    color: #ffffff;
+    background-color: #f0f0f0;
+    color: #333333;
     opacity: 0.8;
 }
 
-/* Range slider styling */
+/* Range Slider Styling */
 input[type="range"] {
     width: 100%;
     margin: 10px 0;
-    background-color: #3d3d3d;
+    background-color: #cccccc;
     height: 4px;
     border-radius: 2px;
     -webkit-appearance: none;
@@ -76,12 +75,12 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    background: #ffffff;
+    background: #333333;
     border-radius: 50%;
     cursor: pointer;
 }
 
-/* Tip input group specific styling */
+/* Tip Input Group */
 .tip-input-group {
     display: flex;
     align-items: center;
@@ -94,19 +93,19 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .tip-percent {
-    color: #ffffff;
+    color: #333333;
     font-size: 1.1rem;
 }
 
-/* Currency rates section */
+/* Currency Rates Section */
 .currency-rates {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #3d3d3d;
+    border-top: 1px solid #cccccc;
 }
 
 .currency-rates h3 {
-    color: #cccccc;
+    color: #666666;
     font-size: 1rem;
     margin-bottom: 15px;
 }
@@ -119,23 +118,23 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .currency-rates li {
-    color: #ffffff;
+    color: #333333;
     font-size: 0.9rem;
     padding: 8px;
-    background-color: #3d3d3d;
+    background-color: #f0f0f0;
     border-radius: 4px;
     text-align: center;
 }
 
-/* Error message styling */
+/* Error Message Styling */
 .error {
-    color: #ff6b6b;
+    color: #ff3333;
     font-size: 0.85rem;
     margin-top: 5px;
     display: block;
 }
 
-/* Responsive design */
+/* Responsive Design */
 @media screen and (max-width: 480px) {
     body {
         padding: 10px;
