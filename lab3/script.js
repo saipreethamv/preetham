@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const tipPercentage = parseFloat(tipInput.value);
         const selectedCurrency = currencySelect.value;
 
+        console.log("Bill Amount:", billAmount);
+        console.log("Tip Percentage:", tipPercentage);
+        console.log("Selected Currency:", selectedCurrency);
+
         if (!isValidBillAmount(billAmount)) {
             errorMessage.textContent = 'Please enter a valid positive number';
             tipPercentageInput.value = '';
@@ -66,10 +70,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Calculate tip amount
         const tipAmount = billAmount * (tipPercentage / 100);
+        console.log("Calculated Tip Amount:", tipAmount);
+
         tipAmountInput.value = formatCurrency(tipAmount, selectedCurrency);
 
         // Calculate total with tip
         const totalWithTip = billAmount + tipAmount;
+        console.log("Total with Tip:", totalWithTip);
+
         totalWithTipInput.value = formatCurrency(totalWithTip, selectedCurrency);
     }
 
