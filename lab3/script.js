@@ -45,16 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${symbol}${converted.toFixed(2)}`;
     }
 
-    // Function to calculate tip
+    // Function to calculate tip and update display
     function calculateTip() {
         const billAmount = parseFloat(billTotalInput.value);
         const tipPercentage = parseFloat(tipInput.value);
         const selectedCurrency = currencySelect.value;
 
-        console.log("Bill Amount:", billAmount);
-        console.log("Tip Percentage:", tipPercentage);
-        console.log("Selected Currency:", selectedCurrency);
-
+        // Check if bill amount is valid
         if (!isValidBillAmount(billAmount)) {
             errorMessage.textContent = 'Please enter a valid positive number';
             tipPercentageInput.value = '';
@@ -63,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        // Clear error message
         errorMessage.textContent = '';
         
         // Update tip percentage display
@@ -70,14 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Calculate tip amount
         const tipAmount = billAmount * (tipPercentage / 100);
-        console.log("Calculated Tip Amount:", tipAmount);
-
         tipAmountInput.value = formatCurrency(tipAmount, selectedCurrency);
 
         // Calculate total with tip
         const totalWithTip = billAmount + tipAmount;
-        console.log("Total with Tip:", totalWithTip);
-
         totalWithTipInput.value = formatCurrency(totalWithTip, selectedCurrency);
     }
 
@@ -88,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         calculateTip();
     }
 
-    // Event listeners
+    // Event listeners for user interactions
     tipSlider.addEventListener('input', () => syncTipInputs(tipSlider.value));
     tipInput.addEventListener('input', () => {
         let value = parseFloat(tipInput.value);
