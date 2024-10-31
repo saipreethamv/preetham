@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Calculate total with tip
         const totalWithTip = billAmount + tipAmount;
-        totalWithTipInput.value = formatCurrency(totalWithTip, selectedCurrency);
+        totalWithTipInput.value = formatCurrency(totalWithTp, selectedCurrency);
     }
 
     // Sync tip slider and number input
