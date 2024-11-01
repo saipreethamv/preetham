@@ -13,7 +13,7 @@
         
         <div class="form-group">
             <label>Bill Total: $</label>
-            <input type="number" id="billTotal" value="0" min="0" step="0.01">
+            <input type="number" id="billTotal" placeholder="Enter the bill" min="0" step="0.01">
         </div>
 
         <div class="form-group">
@@ -45,10 +45,18 @@
 
         <div class="currency-info">
             <p>Currency conversion:</p>
-            <p>$1 USD = 149.34 JPY for Yen</p>
-            <p>$1 USD = ₹84.07 INR for Rupee</p>
+            <div class="currency-cards">
+                <div>
+                    <h2>Japanese Yen Conversion</h2>
+                    <div>1 USD = ¥149.34</div>
+                </div>
+                
+                <div>
+                    <h2>Indian Rupee Conversion</h2>
+                    <div>1 USD = ₹84.07</div>
+                </div>
+            </div>
         </div>
-    </div>
 
     <script src ="script.js"></script>
 </body>
