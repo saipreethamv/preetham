@@ -1,172 +1,164 @@
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f5eded;
-    color: #070505d8;
-    line-height: 1.6;
-    padding: 20px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9fdfa;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #d3d3d3;
+            padding: 15px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
 
-h1 {
-    color: #241616;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
+        h1 {
+            color: #000;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: 20px;
+        }
 
-.form-group {
-    margin-bottom: 20px;
-}
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #1b1313;
-    font-size: 0.9rem;
-}
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
 
-input[type="text"],
-input[type="number"],
-select {
-    width: 100%;
-    padding: 12px;
-    background-color: #090909;
-    border: none;
-    border-radius: 6px;
-    color: #ffffff;
-    font-size: 1.1rem;
-}
+        input[type="number"],
+        select {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            -moz-appearance: textfield;
+        }
 
-input:disabled {
-    background-color: #0a0a0a;
-    color: #ffffff;
-    opacity: 0.8;
-}
+        /* Remove spinner buttons for number inputs */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
-/* Range slider styling */
-input[type="range"] {
-    width: 100%;
-    margin: 10px 0;
-    background-color: #060606;
-    height: 4px;
-    border-radius: 2px;
-    
-}
+        .tip-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
 
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #ffffff;
-    border-radius: 50%;
-    color: #0a0909;
-    cursor: pointer;
-}
+        input[type="range"] {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            margin: 10px 0;
+        }
 
-/* Tip input group specific styling */
-.tip-input-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+        .tip-percentage {
+            background-color: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            min-width: 60px;
+            text-align: center;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
 
-.tip-number-input {
-    width: 70px !important;
-    text-align: center;
-}
+        .converted-amount {
+            background-color: #fff;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 300px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
 
-.tip-percent {
-    color: #070707;
-    font-size: 1.1rem;
-}
+        .currency-info {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+        }
 
-/* Currency rates section */
-.currency-rates {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #070707;
-}
+        .currency-info p {
+            margin: 5px 0;
+        }
 
-.currency-rates h3 {
-    color: #342b2b;
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
+        /* Responsive design */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
 
-.currency-rates ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-}
+            .container {
+                padding: 15px;
+            }
 
-.currency-rates li {
-    color: #ffffff;
-    font-size: 0.9rem;
-    padding: 8px;
-    background-color: #060606;
-    border-radius: 4px;
-    text-align: center;
-}
+            input[type="range"] {
+                width: 100%;
+                min-width: unset;
+            }
 
-/* Error message styling */
-.error {
-    color: #ff6b6b;
-    font-size: 0.85rem;
-    margin-top: 5px;
-    display: block;
-}
+            .tip-control {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
 
-/* Responsive design */
-@media screen and (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-    
-    .container {
-        padding: 15px;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    .currency-rates ul {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    input[type="text"],
-    input[type="number"],
-    select {
-        font-size: 1rem;
-        padding: 10px;
-    }
-    
-    .tip-input-group {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .tip-number-input {
-        width: 100% !important;
-    }
-}
+            .tip-percentage {
+                align-self: flex-start;
+            }
+        }
+
+        /* Tablet optimization */
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .converted-amount, 
+            .currency-info {
+                background-color: #f8f8f8;
+            }
+        }
+
+        /* Touch device optimization */
+        @media (hover: none) {
+            input[type="range"] {
+                height: 30px; /* Larger touch target */
+            }
+
+            select, 
+            input[type="number"] {
+                font-size: 16px; /* Prevent iOS zoom */
+                padding: 12px;
+            }
+        }
+   
